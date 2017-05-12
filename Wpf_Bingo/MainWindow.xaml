@@ -1,0 +1,79 @@
+﻿<Window x:Class="Wpf_Bingo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Juego del Bingo" Height="380" Width="525" Icon="Imagenes/balls.png" Closing="Window_Closing" ResizeMode="CanMinimize">
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="Juego">
+                <MenuItem x:Name="mnuNuevo" Header="Nuevo" Click="mnuNuevo_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Iconos/1491482155_Modify.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Salir" Click="Button_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Iconos/1491482254_Erase.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <DockPanel>
+            <ToolBar Width="220" HorizontalAlignment="Left">
+                <Button Click="mnuNuevo_Click">
+                    <Image Source="Iconos/1491482155_Modify.png" ToolTip="Nuevo juego"/>
+                </Button>
+                <Button Click="Button_Click">
+                    <Image Source="Iconos/1491482254_Erase.png" ToolTip="Salir"/>
+                </Button>
+            </ToolBar>
+            <Label Content="Nº Bolas sin extraer: "/>
+            <Border BorderBrush="Black" BorderThickness="1" Width="31"  VerticalAlignment="Center" Height="22">
+                <TextBlock Name="tbxBolasQuedan" Background="Yellow" TextAlignment="Center"/>
+            </Border>
+            <ComboBox IsEditable="True" Name="cbxBolasSacadas"  Width="86" HorizontalAlignment="Left" Background="White"></ComboBox>
+        </DockPanel>
+        <DockPanel>
+            <StackPanel Height="282">
+                <Image Source="Imagenes/bingo.png" Height="100" Width="181" />
+                <Button x:Name="btnExtraer" Height="60" Width="100" Click="btnExtraer_Click">
+                    <Button.Content>
+                        <StackPanel>
+                            <Image Source="Imagenes/balls.png" Height="30"/>
+                            <Label Content="Extraer bola"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Border BorderBrush="Black" BorderThickness="1" Margin="30" Height="50" Width="70">
+                    <TextBlock Name="tblNumero"  Background="Pink" TextAlignment="Center"/>
+                </Border>
+            </StackPanel>
+            <Grid Background="Black" Name="grdBingo" Margin="0,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Margin="1,1,1,1" Background="White"/>
+            </Grid>
+        </DockPanel>
+    </StackPanel>
+</Window>
